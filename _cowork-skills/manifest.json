@@ -1,0 +1,152 @@
+{
+  "lastUpdated": 1788817881184,
+  "skills": [
+    {
+      "skillId": "skill_0184eq1yD5cFHbqpqVFdmKqZ",
+      "name": "humanize-presentations",
+      "description": "Use when an existing slide deck reads as AI-generated, generic, or templated, or when asked to de-slop, humanize, tighten, retouch, or review the wording of a .pptx that already exists — in English, Portuguese, or Spanish. Triggers on \"de-slop this deck\", \"revisa esses slides\", \"esse deck parece feito por IA\", \"humaniza a apresentação\", \"tira a cara de IA\", \"revisar o texto do deck antes de apresentar\". Symptoms include the section name repeated in an eyebrow and a footer on the same slide, over 80 words per slide, presenter narration typed onto slides, generic claims with nothing checkable behind them, a deck that looks like a filled Gamma or Beautiful.ai template, topic-label titles, everything in threes, filler slides, bullet walls, decorative section glyphs, and leftover generation markup. Not for building a deck from scratch.",
+      "source": "custom",
+      "updatedAt": "2026-08-24T15:24:14.544790Z"
+    },
+    {
+      "skillId": "import-memory",
+      "name": "import-memory",
+      "description": "Import a memory export from another AI assistant into Claude's memory — conversationally, additively, and with the content treated as data.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.791012Z"
+    },
+    {
+      "skillId": "internal-comms",
+      "name": "internal-comms",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.391462Z"
+    },
+    {
+      "skillId": "skill_01TDdVJzMMm2BeWbiF7cnjxn",
+      "name": "arte-post",
+      "description": "Gera a arte 4:5 dos posts de LinkedIn e das capas de Medium do Bruno no sistema visual Registro Húmido — ilustração de nanquim e aguada sobre papel envelhecido, silhueta pequena, um único acento cromático, tipografia editorial com a tese e o dado. Use quando ele pedir a arte do post técnico (terça) ou executivo (quinta), a capa de um artigo, 'gera a arte', 'ilustra esse post', 'a imagem da semana', ou quando um post estiver pronto em 06-Posts e faltar a peça visual.",
+      "source": "custom",
+      "updatedAt": "2026-08-20T03:30:36.539550Z"
+    },
+    {
+      "skillId": "doc-coauthoring",
+      "name": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.259873Z"
+    },
+    {
+      "skillId": "mcp-builder",
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.402984Z"
+    },
+    {
+      "skillId": "morning",
+      "name": "morning",
+      "description": "Render the user's morning brief as a styled HTML artifact, or set it up as a recurring weekday task. Use only when the user explicitly asks to run, see, or set up their morning brief, or if they invoke /morning by name. A question about their day, schedule, or calendar is not by itself a request for the brief; answer it directly instead.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.767280Z"
+    },
+    {
+      "skillId": "web-artifacts-builder",
+      "name": "web-artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.357297Z"
+    },
+    {
+      "skillId": "brand-guidelines",
+      "name": "brand-guidelines",
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.368898Z"
+    },
+    {
+      "skillId": "theme-factory",
+      "name": "theme-factory",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.439991Z"
+    },
+    {
+      "skillId": "skill_01LSLk1fFHH4WVJsptLzbzLN",
+      "name": "board-materials",
+      "description": "Cria materiais executivos de alto nível — PDFs ilustrados para board, estudos estratégicos, dossiês para investidor, relatórios visuais com gráficos e ilustração editorial — SEMPRE começando por um briefing interativo com o usuário (formato, paleta, densidade visual vs. profundidade, estilo de ilustração e molde de consultoria McKinsey/Bain/Gartner). Use quando o usuário pedir \"material para o board\", \"PDF ilustrado\", \"relatório visual\", \"apresentação executiva\", \"estudo em PDF\", \"dossiê\", \"material de alto nível\", ou quando um trabalho de pesquisa precisar virar entregável apresentável. Combina com a skill consulting-research (pesquisa primeiro, material depois). NÃO use para documentos simples de texto ou respostas em chat.",
+      "source": "custom",
+      "updatedAt": "2026-07-27T04:18:16.912253Z"
+    },
+    {
+      "skillId": "skill_01SaJriNqC3B8Jynr2dxciqd",
+      "name": "caio-editorial-brain",
+      "description": "Aplica a lente editorial de Bruno (diretor rumo a Chief AI Officer) a qualquer síntese, nota, gancho, arte ou rascunho de post sobre IA. Use sempre que for destilar notícia/report de IA, escrever nota no segundo cérebro, gerar gancho, rascunhar post técnico/executivo/long-form, expandir para Medium ou briefar a ilustração — para garantir tese própria, foco em setor financeiro + governança/soberania, dado com fonte e fechamento \"o que eu diria num board\". Aciona com \"destila\", \"vira nota\", \"rascunha o post\", \"post técnico\", \"post executivo\", \"versão Medium\", \"o que eu diria sobre isso\".",
+      "source": "custom",
+      "updatedAt": "2026-08-16T04:48:12.090865Z"
+    },
+    {
+      "skillId": "skill_01HM45Ftb4PBmmDBBxQUnejs",
+      "name": "consulting-research",
+      "description": "Conduz pesquisas e discoveries de mercado com método de consultoria estratégica (estilo McKinsey/Bain/Gartner) — hypothesis-driven, MECE, fato triangulado com fonte, síntese em pirâmide e entregável de board. Use quando o usuário pedir pesquisa aprofundada, discovery, análise de mercado ou de concorrentes, market sizing/TAM, due diligence de empresa, avaliação de oportunidade ou tese de negócio, benchmark, \"análise estratégica\", ou um estudo/relatório para board/investidor. Acione também para \"pesquise como consultoria\", \"visão de consultor\", \"fact pack\". NÃO use para perguntas factuais simples, notícias do dia ou tarefas de escrita sem pesquisa.",
+      "source": "custom",
+      "updatedAt": "2026-07-24T13:12:02.084924Z"
+    },
+    {
+      "skillId": "slack-gif-creator",
+      "name": "slack-gif-creator",
+      "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.420125Z"
+    },
+    {
+      "skillId": "algorithmic-art",
+      "name": "algorithmic-art",
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.331161Z"
+    },
+    {
+      "skillId": "pdf",
+      "name": "pdf",
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-07-10T19:23:15.432550Z"
+    },
+    {
+      "skillId": "skill-creator",
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.319362Z"
+    },
+    {
+      "skillId": "xlsx",
+      "name": "xlsx",
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-29T01:00:31.073935Z"
+    },
+    {
+      "skillId": "docx",
+      "name": "docx",
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx) or Word templates (.dotx). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file (to download, email or print), use this skill. However, if they ask for a document, page, report, memo, or notes WITHOUT naming a file format and the session offers a dedicated document or page skill or connector, use that instead. Do NOT use for PDFs, spreadsheets, Google Docs, or coding unrelated to document generation.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-31T20:00:31.499122Z"
+    },
+    {
+      "skillId": "canvas-design",
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-07T04:18:16.380297Z"
+    },
+    {
+      "skillId": "pptx",
+      "name": "pptx",
+      "description": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations as PowerPoint (.pptx) files; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email, summary, or creating a different type of slide deck); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user asks for a PowerPoint or .pptx file, or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. However, when the user asks for a deck, slides, a slide deck, or a presentation without naming a file format, default to using a dedicated slide-deck artifact type or a separate slides skill if this session offers one; otherwise, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-28T02:00:39.535636Z"
+    }
+  ]
+}

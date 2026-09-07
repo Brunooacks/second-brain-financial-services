@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>One Banking AI · 2026-07-15</title>
+<style>
+@page{size:A4;margin:0}
+html,body{margin:0;background:#0a0e1a}
+*{box-sizing:border-box}
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;color:#1a2233;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;background:#eef1f6}
+/* MASTHEAD */
+.masthead{background:linear-gradient(135deg,#0a0e1a 0%,#141b2e 55%,#1e2a4a 100%);padding:38px 44px 30px;color:#fff}
+.brandrow{display:flex;align-items:center;gap:14px}
+.logo{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#2e7dff,#17c3b2);display:inline-block;text-align:center;line-height:44px;font-weight:800;font-size:20px;color:#fff}
+.brandtxt{font-size:23px;font-weight:800;letter-spacing:.3px}
+.brandtxt span{color:#5fd0c4}
+.kicker{margin-top:4px;font-size:12px;color:#9fb0cc;letter-spacing:1.5px;text-transform:uppercase}
+.edtag{margin-top:16px;display:inline-block;background:rgba(95,208,196,.14);border:1px solid rgba(95,208,196,.4);color:#8fe3d8;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px}
+.dateline{margin-top:14px;font-size:13.5px;color:#c4d0e6}
+.curadoria{margin-top:6px;font-size:12px;color:#7d8db0;font-weight:600}
+/* SELOS */
+.badge{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:5px;letter-spacing:.4px;vertical-align:middle}
+.badge-impact{background:#ffe2e2;color:#b8121b;border:1px solid #f4b4b4}
+.badge-first{background:#e2ecff;color:#1c4fd1;border:1px solid #b4ccf4}
+.badge-ctx{background:#e9edf5;color:#5a6884;border:1px solid #cdd6e6}
+.badge-data{background:#fff2d9;color:#9a6a00;border:1px solid #f0d59a}
+/* BODY */
+.body{padding:30px 44px 40px}
+.disclaimer{background:#0f1626;border:1px solid #26324d;border-radius:12px;padding:16px 20px;color:#c7d2e8;font-size:12.5px;margin-bottom:26px}
+.disclaimer b{color:#fff}
+.disclaimer .conf{display:block;margin-top:8px;color:#8091b2;font-size:11.5px;font-style:italic}
+.lead-wrap{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:0 2px 10px rgba(20,30,60,.06);margin-bottom:26px;border-top:4px solid #2e7dff}
+.lead-label{font-size:12px;font-weight:800;color:#2e7dff;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:12px}
+.lead-thesis{font-size:16px;font-weight:700;color:#0f1830;line-height:1.5;margin-bottom:16px}
+.lead-wrap p{font-size:13.5px;margin:0 0 12px}
+.sectitle{color:#fff;font-size:16px;font-weight:800;margin:32px 0 14px;padding-left:2px}
+.card{background:#fff;border-radius:13px;padding:20px 24px;box-shadow:0 2px 8px rgba(20,30,60,.05);margin-bottom:16px}
+.card h3{font-size:15px;margin:0 0 6px;color:#0f1830;line-height:1.4}
+.card .meta{margin:0 0 12px}
+.card p{font-size:13px;margin:0 0 11px;color:#26324d}
+.board{background:#f4f8ff;border-left:4px solid #2e7dff;border-radius:0 8px 8px 0;padding:11px 15px;font-size:12.5px;color:#1a2540;margin:11px 0}
+.board b,.board em{color:#0f4bb3;font-style:normal;font-weight:700}
+.usar{background:#f2fbf7;border-left:4px solid #17c3b2;border-radius:0 8px 8px 0;padding:10px 15px;font-size:12.5px;color:#124a42;margin:11px 0}
+.usar em{color:#0d8377;font-style:normal;font-weight:700}
+/* TERMOMETRO */
+.thermo{background:#fff;border-radius:13px;padding:20px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(20,30,60,.05)}
+.thermo h3{font-size:15px;margin:0 0 14px;color:#0f1830}
+.trow{border-bottom:1px solid #eef1f6;padding:8px 0;font-size:12.5px;color:#26324d}
+.trow:last-child{border-bottom:none}
+.trow b{color:#0f1830}
+.tnum{color:#b8121b;font-weight:800}
+/* APRENDIZADO */
+.learn{background:linear-gradient(135deg,#141b2e,#1e2a4a);color:#e6edfb;border-radius:13px;padding:20px 24px;margin-bottom:16px}
+.learn h3{margin:0 0 10px;font-size:15px;color:#8fe3d8}
+.learn p{font-size:13px;margin:0;color:#cdd8ee}
+.learn b{color:#fff}
+/* CHART */
+.chart{background:#fff;border-radius:13px;padding:20px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(20,30,60,.05)}
+.chart h3{font-size:15px;margin:0 0 4px;color:#0f1830}
+.chart .sub{font-size:12px;color:#5a6884;margin:0 0 16px}
+.bar-lab{font-size:12px;color:#26324d;margin-bottom:4px;font-weight:600}
+.bar-track{background:#eef1f6;border-radius:6px;height:26px;position:relative;margin-bottom:14px}
+.bar-fill{height:26px;border-radius:6px;color:#fff;font-size:11.5px;font-weight:700;line-height:26px;padding-left:10px;white-space:nowrap}
+.chart .cap{font-size:11.5px;color:#5a6884;font-style:italic;margin:4px 0 0}
+/* RADAR */
+.radar{background:#fff;border-radius:13px;padding:20px 24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(20,30,60,.05)}
+.radar h3{font-size:15px;margin:0 0 12px;color:#0f1830}
+.radar li{font-size:12.5px;color:#26324d;margin-bottom:9px}
+/* FOOTER */
+.footer{background:#0a0e1a;color:#8091b2;padding:26px 44px 34px;font-size:11.5px}
+.footer .src{color:#a7b4d0;line-height:1.7}
+.footer .sign{margin-top:16px;color:#5fd0c4;font-weight:800;font-size:13px;letter-spacing:.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="brandrow">
+      <span class="logo">1B</span>
+      <div>
+        <div class="brandtxt">One Banking <span>AI</span></div>
+        <div class="kicker">IA no setor financeiro · governança · soberania</div>
+      </div>
+    </div>
+    <div class="edtag">Edição Nº 31</div>
+    <div class="dateline">Quarta-feira, 15 de julho de 2026</div>
+    <div class="curadoria">Curadoria: Team Sector Banking</div>
+  </div>
+
+  <div class="body">
+
+    <div class="disclaimer">
+      <b>Como ler este briefing.</b> <span class="badge badge-impact">⚠️ IMPACTO DIRETO NO NEGÓCIO</span> = movimento de cliente/concorrente/regulador que afeta a operação agora. <span class="badge badge-first">PRIMEIRA MÃO</span> = item captado direto na fonte BR, fora das newsletters globais. Conteúdo internacional entra como contexto/comparação, não como manchete — salvo marco global incontornável.
+      <span class="conf">Uso interno e confidencial — cruza com o estudo Where To Play Banking · One Banking (MTP 27-29).</span>
+    </div>
+
+    <div class="lead-wrap">
+      <div class="lead-label">⚡ A leitura de hoje</div>
+      <div class="lead-thesis">O Banco do Brasil não anunciou um chatbot. Anunciou um agente de cobrança que fecha 50% dos acordos de dívida sozinho — e, ao fazer isso, cortou o parcelamento médio de 33 para 14 parcelas. O board olhou o +306% de conversão e bateu palma. O número que ninguém leu foi o outro: um agente que reescreve os termos da dívida, uma negociação de cada vez, está deixando de executar a política de crédito e passando a escrevê-la. E ninguém assinou esse mandato.</div>
+      <p>A CloudWalk e a Belvo (ed. Nº 30) eram fintechs usando o Open Finance como sensor. O BB é o <b>banco público</b>, o maior do país em base, colocando em produção uma <b>arquitetura multiagente com orquestrador central</b> — vários agentes coordenados que compartilham contexto entre canais e executam jornadas completas. E o caso de uso mais afiado não é o atendimento: é a <b>cobrança</b>.</p>
+      <p>Os números da BBTS mostram por que isso aprova sozinho num comitê: <b>+306% de conversão</b> em negociação de dívida, <b>50% das interações fechadas sem humano no loop</b>, parcela média caindo <b>de 33,17 para 14,22</b> (AWS + BRQ, 13/07). Some a plataforma conversacional: <b>Pix concluídos +69%, erro de chave −21%, volume +4,2%</b> (Mobile Time, 09/07).</p>
+      <div class="board"><em>O que eu diria num board:</em> a leitura não-óbvia está na parcela, não na conversão. Cortar o parcelamento médio de 33 para 14 é a decisão de crédito mais relevante da operação — e foi tomada pelo agente, dentro da negociação, sem passar por uma política escrita. Pode ser ótimo (recupera mais rápido, desafoga o devedor) ou péssimo (o modelo otimiza para <em>fechar</em>, não para recuperar com dignidade — e um agente que quer fechar dá o desconto que precisar). A distinção não está no número; está no <em>mandato</em>. Um agente que fecha 50% dos acordos sozinho assume obrigação vinculante em nome de um banco público — que responde a TCU e Bacen, onde "a IA decidiu" não é defesa. É a categoria do <b>Cohort</b>: mandato de agente como condição de legalidade, não higiene opcional.</div>
+      <p>O contraponto honesto: 33 → 14 parcelas provavelmente é boa notícia para o devedor. Acordo mais curto é menos juros, menos tempo negativado. O ponto não é frear — é <b>nomear</b>: se ninguém escreveu que 14 é o alvo, então 14 é efeito colateral do modelo, não decisão de crédito. <b>Um resultado que você não pediu não é estratégia, é sorte auditável.</b></p>
+      <div class="usar"><em>Pra usar amanhã:</em> levar ao comitê uma pergunta de uma linha, válida para qualquer agente de cobrança/execução em piloto: "qual é a alçada de desconto e de reparcelamento que nosso agente concede sem humano, quem assinou essa alçada, e onde está a trilha que prova que ele não a excedeu?"</div>
+    </div>
+
+    <div class="sectitle">🤖 Agentes &amp; Força de Trabalho</div>
+
+    <div class="card">
+      <h3>BBTS: agente de cobrança do BB fecha 50% dos acordos sem humano e corta parcela média de 33 para 14</h3>
+      <div class="meta"><span class="badge badge-impact">⚠️ IMPACTO DIRETO NO NEGÓCIO</span> <span class="badge badge-first">PRIMEIRA MÃO</span> <span class="badge badge-ctx">BR</span></div>
+      <p>A <b>BB Tecnologia e Serviços (BBTS)</b> estruturou um modelo de negociação de dívida e recuperação de crédito com IA generativa conversacional no WhatsApp. Resultados: <b>+306% de conversão</b>, <b>50% das interações sem intervenção humana</b>, e queda da parcela média dos acordos <b>de 33,17 para 14,22</b>. Pela plataforma o cliente simula, formaliza acordo e emite boleto. Parceria <b>AWS</b> + <b>BRQ Digital Solutions</b>. (adnews; TI Inside; IT Forum, 13/07/2026)</p>
+      <div class="board"><em>O que eu diria num board:</em> muda a conversa de "IA no atendimento" para "IA na decisão de crédito". Um agente que fecha metade dos acordos e encurta o parcelamento pela metade está precificando risco na conversa — cada desconto é uma decisão de crédito microdelegada. Num banco público, é <em>ato administrativo</em> sujeito a TCU. O número a exigir não é a conversão — é a <em>taxa de cura efetiva</em> dos acordos do agente vs. do humano na mesma safra. Conversão é vaidade; cura é recuperação.</div>
+      <div class="usar"><em>Pra usar amanhã:</em> pedir em um slide a <em>matriz de alçada</em> do agente — teto de desconto, teto de reparcelamento, gatilho de escalonamento para humano. Sem ela, +306% é número de imprensa, não de comitê de risco.</div>
+    </div>
+
+    <div class="card">
+      <h3>BB põe plataforma conversacional multiagente com orquestrador central em produção (app + WhatsApp)</h3>
+      <div class="meta"><span class="badge badge-impact">⚠️ IMPACTO DIRETO NO NEGÓCIO</span> <span class="badge badge-first">PRIMEIRA MÃO</span> <span class="badge badge-ctx">BR</span></div>
+      <p>O <b>Banco do Brasil</b> iniciou os testes de uma plataforma conversacional composta por <b>diversos agentes de IA coordenados por um orquestrador central</b> — que compreende contexto, compartilha informação entre canais e <b>sugere proativamente</b> operações recorrentes (ex.: Pix no formato preferido). Métricas iniciais no WhatsApp: <b>Pix concluídos +69%, erro de chave −21%, volume +4,2%</b>. (Convergência Digital; Mobile Time; Canaltech; TI Inside; sala de imprensa do BB, 09–10/07/2026)</p>
+      <div class="board"><em>O que eu diria num board:</em> a notícia de arquitetura é o <em>orquestrador</em>. Sair de "um bot por canal" para "um orquestrador que mantém contexto e decide qual agente aciona" é a diferença entre automação e força de trabalho de agentes — e é onde a governança escala: quantos agentes existem sob ele, o que cada um pode fazer, como se prova que um não invadiu o escopo do outro. Orquestrador sem inventário de mandato é caixa-preta com procuração. Banco público com agentes proativos movendo Pix precisa do <em>censo do parque de agentes</em> antes de a fiscalização pedir.</div>
+      <div class="usar"><em>Pra usar amanhã:</em> o "+69% de Pix" é o número de venda; o número de governança é quantas operações o orquestrador sugeriu proativamente e quantas o cliente executou sem revisar. Proatividade que vira execução sem fricção é conveniência — e é o vetor por onde um erro de contexto vira transação.</div>
+    </div>
+
+    <div class="sectitle">🛡️ Governança &amp; Risco</div>
+
+    <div class="card">
+      <h3>Hassabis (DeepMind) propõe órgão de padrões independente nos moldes da FINRA para testar modelos de fronteira</h3>
+      <div class="meta"><span class="badge badge-ctx">CONTEXTO GLOBAL</span></div>
+      <p>O CEO do <b>Google DeepMind, Demis Hassabis</b>, defendeu (14/07) um <b>órgão de padrões independente</b> inspirado na <b>FINRA</b> — financiado pela indústria, com técnicos de classe mundial, prestando contas ao governo dos EUA. Labs compartilhariam modelos para avaliação <b>voluntária até 30 dias antes do lançamento</b>; validado o protocolo, viraria <b>requisito</b> para deployment no mercado americano. Testaria capacidades perigosas, risco cibernético e se salvaguardas podem ser burladas. (TechCrunch; Axios; CNBC; PYMNTS, 14/07/2026)</p>
+      <div class="board"><em>O que eu diria num board:</em> o detalhe que salta pra quem vem de banco é a escolha do modelo institucional — a <em>FINRA</em>, o autorregulador do mercado financeiro, não a SEC nem um comitê de ética. Sinal de que a governança de IA de fronteira está sendo desenhada com a gramática do compliance financeiro (teste pré-lançamento, gate de deployment). O setor que mais sabe autorregular vira o <em>template</em>. Contraponto: um órgão "liderado pelos EUA" que vira requisito de deployment é, para o Brasil, problema de <em>soberania</em> — quem valida o modelo que roda no meu banco, e sob qual jurisdição?</div>
+      <div class="usar"><em>Pra usar amanhã:</em> usar a analogia FINRA como ponte no board — "governança de IA não é tema novo; é o compliance de mercado que já sabemos fazer, aplicado a um ativo novo". Baixa o hype, sobe a autoridade.</div>
+    </div>
+
+    <div class="card">
+      <h3>Acquirers cravam o gargalo do agentic commerce: 9 em 10 apontam governança, permissão e consentimento</h3>
+      <div class="meta"><span class="badge badge-ctx">CONTEXTO GLOBAL</span></div>
+      <p>Levantamento com <b>acquirers</b>: <b>~80% se dizem ao menos parcialmente prontos</b> para transações iniciadas por agentes, mas o gargalo não é a infra de pagamento — é o <b>governo da transação</b>. <b>Mais de 9 em cada 10</b> citam governança e permissões, frameworks de consentimento e dado, orquestração de fulfillment e coordenação entre negócios como a prioridade nº 1. Identidade, credencial e antifraude ficam ambíguas quando a decisão é de um software agindo pelo usuário. (PYMNTS; Visa Acceptance; via Sam Boboev, 14/07/2026)</p>
+      <div class="board"><em>O que eu diria num board:</em> confirma a tese — no agentic commerce, o trilho está pronto e o mandato não. Quando quem processa a transação diz que 90%+ do problema é consentimento/permissão/governança e não infra, o valor não capturado fica claro: não em <em>habilitar</em> o agente a pagar, mas em <em>provar quem o autorizou e até quanto</em>. É a camada Cohort (mandato) + Veltrix (observabilidade) — demanda declarada em voz alta por quem paga a conta da fraude.</div>
+    </div>
+
+    <div class="sectitle">⚙️ Engenharia &amp; Dados</div>
+
+    <div class="card">
+      <h3>swyx: as 5 tendências do AI Engineering na World's Fair 2026 — "construir sistemas em torno de agentes, não só com agentes"</h3>
+      <div class="meta"><span class="badge badge-ctx">CONTEXTO GLOBAL</span></div>
+      <p>Na <b>AI Engineer World's Fair 2026</b>, o eixo mudou de "construir <em>com</em> agentes" para "<b>construir sistemas <em>em torno de</em> agentes</b>" — orquestração, memória, verificação e critério de parada como disciplina de engenharia, não como prompt. (Latent Space / swyx, 14/07/2026)</p>
+      <div class="board"><em>O que eu diria num board:</em> validação técnica do que o BB mostrou na prática. O diferencial deixou de ser "temos um agente" e passou a ser <em>a engenharia ao redor dele</em> — o orquestrador, a trilha, o ponto de parada. Tradução: não pergunte se temos agentes; pergunte se temos a engenharia de controle que os cerca. Agente sem harness e sem critério de parada é piloto, não sistema.</div>
+    </div>
+
+    <div class="sectitle">📊 Economia de IA &amp; FinOps</div>
+
+    <div class="card">
+      <h3>Codex adicionando ~1 milhão de usuários por dia; brigas de preço se espalham</h3>
+      <div class="meta"><span class="badge badge-ctx">CONTEXTO GLOBAL</span> <span class="badge badge-data">DADO</span></div>
+      <p>O <b>Codex</b> (OpenAI) segue em rampa agressiva — <b>~1 milhão de usuários novos por dia</b>, na esteira do +10x em 6 meses (7 mi de usuários) — e as guerras de preço entre fornecedores de código/inferência se intensificam. (AINews/Smol AI; The Neuron, 14/07/2026)</p>
+      <div class="board"><em>O que eu diria num board:</em> rampa dessa magnitude é a antessala da conta de inferência que ninguém provisiona. Cada usuário novo é consumo recorrente que entra por baixo, via ferramenta, fora do orçamento de tecnologia. Guerra de preço parece boa notícia (custo unitário cai) mas mascara o volume explodindo — o gasto agregado sobe mesmo com o preço caindo. É o ponto cego que a Veltrix mede: <em>preço por token é vaidade; custo por resultado no fim do mês é o número</em>.</div>
+    </div>
+
+    <div class="thermo">
+      <h3>🌡️ Termômetro do dia</h3>
+      <div class="trow"><b>Fraude de identidade digital, 1T26:</b> <span class="tnum">1.495.696</span> tentativas, <span class="tnum">+36,6% a/a</span> — uma a cada ~5 s (Serasa Experian).</div>
+      <div class="trow"><b>BBTS cobrança com IA:</b> <span class="tnum">+306%</span> conversão, <span class="tnum">50%</span> sem humano, parcela média <b>33,17 → 14,22</b> (BBTS/adnews, 13/07).</div>
+      <div class="trow"><b>BB Pix conversacional:</b> Pix concluídos <span class="tnum">+69%</span>, erro de chave <b>−21%</b>, volume <b>+4,2%</b> (Mobile Time, 09/07).</div>
+      <div class="trow"><b>Codex:</b> <span class="tnum">~1 mi</span> de usuários novos/dia (AINews, 14/07).</div>
+      <div class="trow"><b>Juros de referência:</b> Selic <b>14,25%</b> a.a. / CDI ~<b>14,15%</b> a.a. — pano de fundo da inadimplência (mercado, jul/26).</div>
+    </div>
+
+    <div class="chart">
+      <h3>📊 Comparável do dia — acordo de dívida BBTS, antes × depois da IA</h3>
+      <p class="sub">Número médio de parcelas no acordo de renegociação</p>
+      <div class="bar-lab">Antes da IA</div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#7d8db0,#5a6884)">33,17 parcelas</div></div>
+      <div class="bar-lab">Com IA (BBTS)</div>
+      <div class="bar-track"><div class="bar-fill" style="width:42.9%;background:linear-gradient(90deg,#2e7dff,#17c3b2)">14,22 &nbsp;(−57%)</div></div>
+      <p class="cap">Fonte: BBTS/adnews, 13/07/2026. Leitura de board: a métrica que o release destaca é a conversão (+306%); a que decide crédito é esta.</p>
+    </div>
+
+    <div class="learn">
+      <h3>🎓 Aprendizado do dia — "orquestrador de agentes"</h3>
+      <p>Um <b>orquestrador de agentes</b> (agent orchestrator) recebe a intenção do usuário, decide <b>qual agente especializado</b> aciona, mantém o <b>contexto</b> entre eles e entre canais, e junta as respostas numa jornada só. É a diferença entre ter <em>vários bots</em> e ter uma <em>força de trabalho coordenada</em>. Para governança, é a peça central: é no orquestrador que se prova (ou não) que cada agente ficou dentro do escopo. Sem inventário do que ele coordena, é uma caixa-preta com procuração.</p>
+    </div>
+
+    <div class="radar">
+      <h3>🔭 No Radar</h3>
+      <ul>
+        <li><b>Apple × OpenAI:</b> Apple abre processo com "alegações sérias" sobre produto pré-lançamento e ex-parceiro; efeito prático incerto (Big Technology, 13/07). <em>A briga por talento/IP entrou na fase jurídica — sem tese de board ainda.</em></li>
+        <li><b>Itaú:</b> conta PJ por WhatsApp com IA generativa e agente de investimentos (50 bases, 22 mil simulações, em teste) — incumbente na mesma direção do BB.</li>
+        <li><b>C6 Assistant:</b> chat de IA generativa no app para Pix/pagamentos — mais um digital normalizando o agente de atendimento (commodity).</li>
+        <li><b>Golpe do "Novo Desenrola Brasil":</b> criminosos imitam a identidade visual do programa federal para fraudar devedores; Min. Fazenda alerta que não há taxa. <em>A mesma esteira de cobrança que o BB automatiza é a que o golpe imita.</em></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="src"><b style="color:#c7d2e8">Fontes do dia:</b> Convergência Digital, Mobile Time, Canaltech, TI Inside, IT Forum, adnews, sala de imprensa do BB (BB/BBTS); Serasa Experian (Mapa da Fraude 1T26); TechCrunch, Axios, CNBC, PYMNTS (DeepMind/Hassabis); PYMNTS, Visa Acceptance, Sam Boboev (agentic commerce); Latent Space/swyx; AINews/Smol AI, The Neuron; Exame (C6). Cruzamento: NTT DATA — Banking AI Leaders' Playbook 2026 e estudo interno Where To Play Banking · One Banking (MTP 27-29).</div>
+    <div class="sign">Curadoria: Team Sector Banking</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# macOS / iCloud
+.DS_Store
+*.icloud
+.~lock.*
+# Obsidian: estado de janela e cache (muda a cada abertura, não é conteúdo)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json.bak
+# lixo
+AI-Brain.zip
+Sem título*.base
+Sem título*.canvas

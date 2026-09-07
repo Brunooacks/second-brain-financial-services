@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Material Executivo — Template</title>
+<style>
+/* Fontes: npm i @fontsource/inter e copie os woff2 latin E latin-ext para ./fonts
+   (sem latin-ext, acentos quebram). Fallback system-ui funciona sem os arquivos. */
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-ext-400-normal.woff2') format('woff2'),url('fonts/inter-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:block}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-ext-600-normal.woff2') format('woff2'),url('fonts/inter-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:block}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-ext-700-normal.woff2') format('woff2'),url('fonts/inter-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:block}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-ext-800-normal.woff2') format('woff2'),url('fonts/inter-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:block}
+
+/* ===== TOKENS — troque só os VALORES para re-tematizar o material inteiro.
+   Os NOMES são papéis: --blue = série 1, --orange = série 2, --aqua = série 3.
+   Paleta de exemplo: Editorial quente. Outras em references/visual-system.md ===== */
+:root{
+  --navy-900:#2a2118; --navy-800:#3b2e21; --navy-700:#7d3350; --navy-600:#a8482a;
+  --blue:#c25434;   --blue-300:#dd9070; --blue-150:#eec7b4; --blue-100:#f6ded2;
+  --orange:#4f7a55; --aqua:#d9962a;     --wine:#7d3350;
+  --ink:#1f1c17; --ink2:#5c554a; --muted:#968d7d; --grid:#e6ded0; --baseline:#cbc0ae;
+  --surface:#fffdf8; --plane:#f7f3ec; --border:rgba(31,28,23,.13);
+  --good:#4f7a55; --goodtext:#3a5c3f; --warn:#d9962a; --serious:#c07a35; --critical:#b23a26;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:A4 landscape;margin:0}
+html,body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:297mm;height:210mm;page-break-after:always;position:relative;overflow:hidden;background:var(--plane)}
+.pad{padding:11mm 13mm 13mm}
+.pgfoot{position:absolute;bottom:6mm;left:13mm;right:13mm;display:flex;justify-content:space-between;font-size:6.4pt;color:var(--muted);letter-spacing:.04em}
+.eyebrow{font-size:7.5pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--navy-600);margin-bottom:2.5mm}
+h1.sec{font-size:20pt;font-weight:800;letter-spacing:-.02em;line-height:1.08;margin-bottom:2mm}
+.lede{font-size:9pt;color:var(--ink2);line-height:1.45;max-width:250mm;margin-bottom:4.5mm}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:3.2mm;padding:4.5mm}
+.card.tt{border-top:1mm solid var(--blue)}
+.card.tt-o{border-top:1mm solid var(--orange)}
+.card.tt-a{border-top:1mm solid var(--aqua)}
+.card.tt-n{border-top:1mm solid var(--navy-700)}
+.klabel{font-size:6.6pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.small{font-size:7.6pt;color:var(--ink2);line-height:1.42}
+.small b{color:var(--ink)}
+.tiny{font-size:6.5pt;color:var(--muted);line-height:1.38}
+.num{font-weight:800;letter-spacing:-.02em}
+.chip{display:inline-block;font-size:6.4pt;font-weight:700;padding:.7mm 2.2mm;border-radius:99px;letter-spacing:.05em}
+.chip.v{background:#e4f4e4;color:var(--goodtext)}   /* verificado */
+.chip.d{background:#fdf0d6;color:#8a5d00}           /* declarado  */
+.chip.g{background:#fbe4e4;color:#8f1f1f}           /* lacuna     */
+.hr{height:1px;background:var(--grid);margin:3mm 0}
+.flexrow{display:flex;gap:4.5mm}
+.col{flex:1}
+b{font-weight:700;color:var(--ink)}
+table.t{width:100%;border-collapse:collapse;font-size:7.3pt}
+table.t th{text-align:left;font-size:6.4pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:1.6mm 2mm;border-bottom:1.2px solid var(--baseline)}
+table.t td{padding:1.6mm 2mm;border-bottom:1px solid var(--grid);color:var(--ink2);vertical-align:top}
+table.t td b{color:var(--ink)}
+table.t tr:last-child td{border-bottom:none}
+/* card escuro — SEM estas duas linhas, o <b> herda tinta escura e some no fundo escuro */
+.darkcard b{color:#fff}
+.darkcard i{color:var(--blue-100);font-style:italic}
+.ans{background:var(--navy-900);color:#fff;border-radius:3.2mm;padding:5.5mm 6mm}
+.ans .klabel{color:var(--blue-150)}
+.ans .big{font-size:13pt;font-weight:800;line-height:1.28;letter-spacing:-.015em;margin-top:2mm}
+.numlist{display:flex;gap:4.5mm;margin-top:4.5mm}
+.numlist .card{flex:1;position:relative;padding-top:6mm}
+.nbadge{position:absolute;top:-3.2mm;left:4.5mm;width:7mm;height:7mm;border-radius:99px;background:var(--navy-700);color:#fff;font-size:8pt;font-weight:800;display:flex;align-items:center;justify-content:center}
+/* capa e aberturas de parte — camada .art em full-bleed atrás do conteúdo */
+.cover{background:var(--plane);color:var(--ink)}
+.cover .art{position:absolute;inset:0;z-index:1}
+.cover .inner{position:relative;z-index:2;padding:19mm 22mm;height:100%;display:flex;flex-direction:column}
+.cover h1{font-size:36pt;font-weight:800;letter-spacing:-.028em;line-height:1.03;margin:6mm 0 5mm;max-width:168mm}
+.cover .sub{font-size:10.5pt;color:var(--ink2);line-height:1.52;max-width:150mm}
+.cover .meta{margin-top:auto;display:flex;gap:11mm;font-size:7.6pt;color:var(--ink2)}
+.cover .meta b{color:var(--ink);display:block;font-size:9pt;margin-bottom:1mm}
+.div{background:var(--navy-900);color:#fff}
+.div .art{position:absolute;inset:0;z-index:1}
+.div .inner{position:relative;z-index:2;padding:24mm;height:100%;display:flex;flex-direction:column;justify-content:center}
+.div .pt{font-size:8pt;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--aqua)}
+.div h2{font-size:30pt;font-weight:800;letter-spacing:-.025em;line-height:1.07;margin:5mm 0 4mm;max-width:150mm}
+.div .txt{font-size:9.6pt;line-height:1.55;color:#e6dccd;max-width:140mm}
+.div .idx{margin-top:6mm;display:flex;gap:8mm;font-size:7.4pt;color:#b9ab97;letter-spacing:.04em}
+.div .idx b{display:block;color:var(--aqua);font-size:8pt;margin-bottom:1mm}
+</style>
+</head>
+<body>
+
+<!-- ===================== CAPA ILUSTRADA ===================== -->
+<!-- Receita: 2/3 papel com tipografia, 1/3 campo de cor com composição.
+     Hex literal é permitido AQUI (camada de arte), nunca em SVG de dado. -->
+<div class="page cover">
+  <svg class="art" viewBox="0 0 1122 794" preserveAspectRatio="none">
+    <rect width="1122" height="794" fill="#f7f3ec"/>
+    <g transform="translate(660,0)">
+      <rect x="0" y="0" width="462" height="794" fill="#efe7d9"/>
+      <path d="M462,120 A300,300 0 0,0 462,720 Z" fill="#c25434"/>
+      <path d="M462,196 A224,224 0 0,0 462,644 Z" fill="#d97a52"/>
+      <path d="M462,272 A148,148 0 0,0 462,568 Z" fill="#e8a882"/>
+      <rect x="44" y="120" width="150" height="26" rx="4" fill="#2a2118"/>
+      <rect x="44" y="156" width="118" height="26" rx="4" fill="#7d3350"/>
+      <rect x="44" y="192" width="86" height="26" rx="4" fill="#d9962a"/>
+      <rect x="44" y="228" width="54" height="26" rx="4" fill="#4f7a55"/>
+      <circle cx="118" cy="600" r="72" fill="none" stroke="#2a2118" stroke-width="2.5"/>
+      <circle cx="118" cy="600" r="46" fill="#d9962a"/>
+      <circle cx="196" cy="668" r="26" fill="#4f7a55"/>
+      <g fill="#c9bfae">
+        <circle cx="60" cy="330" r="3"/><circle cx="92" cy="330" r="3"/><circle cx="124" cy="330" r="3"/><circle cx="156" cy="330" r="3"/><circle cx="188" cy="330" r="3"/>
+        <circle cx="60" cy="362" r="3"/><circle cx="92" cy="362" r="3"/><circle cx="124" cy="362" r="3"/><circle cx="156" cy="362" r="3"/>
+        <circle cx="60" cy="394" r="3"/><circle cx="92" cy="394" r="3"/><circle cx="124" cy="394" r="3"/>
+        <circle cx="60" cy="426" r="3"/><circle cx="92" cy="426" r="3"/><circle cx="60" cy="458" r="3"/>
+      </g>
+    </g>
+    <rect x="0" y="742" width="660" height="10" fill="#c25434"/>
+    <rect x="0" y="756" width="330" height="6" fill="#d9962a"/>
+    <rect x="0" y="766" width="164" height="6" fill="#4f7a55"/>
+  </svg>
+  <div class="inner">
+    <div style="font-size:7.8pt;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--navy-600)">Tipo do material &middot; Contexto</div>
+    <h1>T&iacute;tulo do<br>estudo em<br>linhas curtas</h1>
+    <div class="sub">Subt&iacute;tulo com a promessa do documento &mdash; o que ele responde e para quem.</div>
+    <div class="meta">
+      <div><b>Preparado para</b>Nome &middot; Board</div>
+      <div><b>Data</b>DD de m&ecirc;s de AAAA</div>
+      <div><b>Base</b>N frentes &middot; N fontes</div>
+      <div><b>M&eacute;todo</b>Hypothesis-driven &middot; MECE</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ABERTURA DE PARTE ===================== -->
+<!-- A composição fica FORA da caixa do texto (padding 24mm + max-width do h2). -->
+<div class="page div">
+  <svg class="art" viewBox="0 0 1122 794" preserveAspectRatio="none">
+    <rect width="1122" height="794" fill="#2a2118"/>
+    <g opacity=".95">
+      <path d="M1122,0 A420,420 0 0,0 702,420 L1122,420 Z" fill="#c25434"/>
+      <path d="M1122,120 A300,300 0 0,0 822,420 L1122,420 Z" fill="#d9962a"/>
+      <path d="M1122,240 A180,180 0 0,0 942,420 L1122,420 Z" fill="#4f7a55"/>
+    </g>
+    <g stroke="#4a3d2c" stroke-width="1.2">
+      <line x1="0" y1="620" x2="1122" y2="620"/><line x1="0" y1="660" x2="1122" y2="660"/>
+    </g>
+    <rect x="0" y="742" width="1122" height="8" fill="#c25434"/>
+  </svg>
+  <div class="inner">
+    <div class="pt">Parte I</div>
+    <h2>T&iacute;tulo-tese da parte</h2>
+    <div class="txt">Um par&aacute;grafo dizendo o que esta parte estabelece e por qu&ecirc; ela vem aqui na narrativa.</div>
+    <div class="idx">
+      <div><b>01</b>Cap&iacute;tulo</div>
+      <div><b>02</b>Cap&iacute;tulo</div>
+      <div><b>03</b>Cap&iacute;tulo</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PÁGINA DE CONTEÚDO ===================== -->
+<div class="page">
+  <div class="pad">
+    <div class="eyebrow">01 &middot; Se&ccedil;&atilde;o</div>
+    <h1 class="sec">Action title: uma frase que afirma a tese da p&aacute;gina, n&atilde;o um r&oacute;tulo</h1>
+    <div class="lede">Lede de 1-3 linhas contextualizando. Quem l&ecirc; s&oacute; t&iacute;tulo + lede entende o argumento.</div>
+    <div class="flexrow">
+      <div class="card col tt">
+        <div class="klabel">Stat tile</div>
+        <div class="num" style="font-size:19pt">93%</div>
+        <div class="tiny">explica&ccedil;&atilde;o do n&uacute;mero com fonte (Fonte, ano)</div>
+        <div class="hr"></div>
+        <div><span class="chip v">VERIFICADO</span> <span class="small">lido na fonte prim&aacute;ria</span></div>
+      </div>
+      <div class="card col" style="flex:2">
+        <div class="klabel" style="margin-bottom:1mm">T&iacute;tulo do gr&aacute;fico = a mensagem que ele prova</div>
+        <!-- SVG de dado: SÓ var(--token), nunca hex literal -->
+        <svg width="100%" viewBox="0 0 560 120">
+          <line x1="10" y1="14" x2="10" y2="104" stroke="var(--baseline)" stroke-width="1.5"/>
+          <rect x="10" y="20" width="380" height="20" rx="4" fill="var(--blue)"/>
+          <text x="396" y="34" font-size="10" font-weight="700">valor</text>
+          <text x="16" y="34" font-size="9" font-weight="600" fill="#fff">S&eacute;rie A (r&oacute;tulo direto)</text>
+          <rect x="10" y="50" width="240" height="20" rx="4" fill="var(--orange)"/>
+          <text x="256" y="64" font-size="10" font-weight="700">valor</text>
+          <text x="16" y="64" font-size="9" font-weight="600" fill="#fff">S&eacute;rie B</text>
+          <line x1="420" y1="14" x2="420" y2="104" stroke="var(--muted)" stroke-dasharray="4 4"/>
+          <text x="426" y="24" font-size="8.5" fill="var(--ink2)" font-weight="600">refer&ecirc;ncia</text>
+        </svg>
+        <div class="tiny">So what: a implica&ccedil;&atilde;o do gr&aacute;fico em uma linha.</div>
+      </div>
+    </div>
+    <div class="card darkcard" style="margin-top:4mm;background:var(--navy-900);color:#fff">
+      <div class="klabel" style="color:var(--blue-150)">Resposta consolidada</div>
+      <div class="small" style="color:#fff;margin-top:1.5mm">Card escuro para a conclus&atilde;o da p&aacute;gina. Note a classe <b>darkcard</b> &mdash; sem ela o negrito some.</div>
+    </div>
+  </div>
+  <div class="pgfoot"><span>Fontes: ... &middot; snapshot DD/MM/AAAA</span><span>03</span></div>
+</div>
+
+</body>
+</html>

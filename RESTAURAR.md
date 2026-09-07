@@ -24,11 +24,11 @@ Backup criado em 2026-09-07. Origem na máquina antiga:
      ```bash
      cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Head-Ai-Banking/AI-Brain
      mv AI-Brain AI-Brain-old-icloud   # se o iCloud já tiver trazido a pasta antiga
-     git clone git@github.com:<usuario>/ai-brain.git AI-Brain
+     git clone https://github.com/Brunooacks/second-brain-financial-services.git AI-Brain
      ```
    - **Fora do iCloud (recomendado, evita conflito iCloud × git):**
      ```bash
-     git clone git@github.com:<usuario>/ai-brain.git ~/AI-Brain
+     git clone https://github.com/Brunooacks/second-brain-financial-services.git ~/AI-Brain
      ```
      Depois ajustar o caminho do vault nas tarefas agendadas do Cowork.
 4. Abrir o Obsidian → "Open folder as vault" → apontar para a pasta clonada. Em Settings → Community plugins, desligar Restricted mode (Dataview e Templater já vêm no repo).
